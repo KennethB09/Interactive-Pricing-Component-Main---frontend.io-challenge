@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+
+:root {
+    /* (Full Slider Bar) */
+    --primary-first-SoftCyan: hsl(174, 77%, 80%);
+    /* (Slider Backround) */
+    --primary-second-StrongCyan: hsl(174, 86%, 45%);
+    /* (Discount Background) */
+    --primary-third-LightGrayish-Red: hsl(14, 92%, 95%);
+    /* (Discount Text) */
+    --primary-fourth-LightRed: hsl(15, 100%, 70%);
+    /* (CTA Text) */
+    --primary-fifth-PaleBlue: hsl(226, 100%, 87%);
+
+    /* (Pricing Component Background) */
+    --neutral-first-White: hsl(0, 0%, 100%);
+    /* (Main Background) */
+    --neutral-second-VeryPale-Blue: hsl(230, 100%, 99%);
+    /* (Empty Slider Bar) */
+    --neutral-third-LightGrayish-Blue: hsl(224, 65%, 95%);
+    /* (Toggle Background) */
+    --neutral-fourth-LightGrayish-Blue: hsl(223, 50%, 87%);
+    /* (Text) */
+    --neutral-fifth-GrayishBlue: hsl(225, 20%, 60%);
+    /* (Text & CTA Background) */
+    --neutral-sixth-Dark-Desaturated-Blue: hsl(227, 35%, 25%);
+
+    --font-family: 'Manrope', sans-serif;
+    --percentage: 50;
+}
+
+* {
+    font-family: var(--font-family);
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(./images/bg-pattern.svg);
+    background-repeat: no-repeat;
+
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+    'title'
+    'pricing'
+    'offer';
+    justify-content: center;
+}
+
+.title-container {
+    grid-area: title;
+    background-image: url(./images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.title-h {
+    color: var(--neutral-sixth-Dark-Desaturated-Blue);
+}
+
+.title-p {
+    color: var(--neutral-fifth-GrayishBlue);
+}
+
+/* bill section */
+
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+}
+
+.pricing-container {
+    grid-area: pricing;
+    background-color: var(--neutral-first-White);
+    box-shadow: 0px 0px 35px -25px;
+    border-radius: 10px 10px 0 0;
+    color: var(--neutral-fifth-GrayishBlue);
+}
+
+.price-dollar {
+    color: var(--neutral-sixth-Dark-Desaturated-Blue);
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.bill-p-span {
+    color: var(--primary-fourth-LightRed);
+    background-color: var(--primary-third-LightGrayish-Red);
+    border-radius: 10px;
+    font-size: .7rem;
+    padding: .2rem .5rem;
+    margin-left: 1rem;
+}
+
+/* range slider */
+
+.rangeSlider-container {
+    justify-content: center;
+    display: flex;
+    padding: 0 2rem;
+    margin-bottom: 4rem;
+}
+
+.rangeSlider {
+    border-radius: 10px;
+}
+
+input[type="range"] {
+    appearance: none;
+    background: var(--neutral-third-LightGrayish-Blue);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: .5rem;
+}
+  
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    cursor: pointer;
+    margin-top: -.75rem;
+
+    background-color: var(--primary-second-StrongCyan);
+    background-image: url(./images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    width: 2rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 0px 15px 15px var(--primary-first-SoftCyan);
+}
+
+.rangeSlider {
+    width: 100%;
+}
+
+.discount-container {
+    display: flex;
+    float: right;
+    justify-content: center;
+    margin-bottom: 3rem;
+    padding-right: 3rem;
+    font-size: .8rem;
+}
+
+.toggle {
+    margin: 0 2rem;
+}
+
+/* slider toggle btn */
+
+.slider.round {
+    border-radius: 34px;
+  }
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch {
+    position: relative;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: -1.5rem;
+    right: 0;
+    bottom: 0;
+    width: 3rem;
+    height: 1.3rem;
+    background-color: var(--neutral-fourth-LightGrayish-Blue);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    aspect-ratio: 1;
+    width: 15px;
+    left: 4px;
+    bottom: 2.85px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider {
+    background-color: var(--primary-first-SoftCyan);
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* offer section */
+
+.offer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: offer;
+
+    background-color: var(--neutral-first-White);
+    color: var(--neutral-fifth-GrayishBlue);
+    box-shadow: 0px 10px 35px -25px;
+
+    border-radius: 0 0 20px 10px;
+
+    margin-top: .15rem;
+    margin-bottom: 4rem;
+    padding: 2rem;
+}
+
+.offer-btn {
+    padding: .5rem 2rem;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid var(--neutral-sixth-Dark-Desaturated-Blue);
+    color: var(--primary-fifth-PaleBlue);
+    background-color: var(--neutral-sixth-Dark-Desaturated-Blue);
+    font-weight: 800;
+    transition: 300ms ease-in-out;
+}
+
+.offer-btn:hover {
+    color: var(--neutral-first-White);
+}
+
+.offer-icon {
+    margin-right: 1rem;
+    width: 1rem;
+}
+
+@media (max-width: 425px) {
+
+    .price-container {
+        flex-direction: column;
+    }
+
+    .pageView-p {
+        margin-bottom: 1rem;
+    }
+
+    .discount-container {
+        display: flex;
+        justify-self: center;
+        padding-right: 1rem;
+    }
+
+    .offer-container {
+        flex-direction: column;
+    }
+
+    .offer-text {
+        margin-bottom: 2rem;
+    }
+
+    .offers {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer ></script>
+  
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  
+  <main>
+
+    <div class="title-container">
+      <h1 class="title-h">Simple, traffic-based pricing</h1>
+      <p class="title-p">Sign-up for our 30-day trial. No credit card required.</p> 
+    </div>
+  
+    <div class="pricing-container">
+
+      <div class="price-container">
+        <p class="pageView-p"><span class="pageView-span" id="pageViews"></span> PAGEVIEW</p>
+        <p class="price-p"><span class="price-dollar">$<span class="price-p-span" id="price"></span>.00</span>/month</p>
+      </div>
+
+      <div class="range-container">
+
+        <form>
+
+          <div class="rangeSlider-container">
+            <input class="rangeSlider" type="range" min="0" max="4" value="0" id="inputRange">
+          </div>
+
+          <div class="discount-container">
+
+            <p class="slideBtn-p">Monthly Billing</p>
+
+            <div class="toggle">
+              <label class="switch">
+                <input type="checkbox" id="slideBtn">
+                <span class="slider round"></span>
+              </label>
+            </div>
+
+            <p class="bill-p">Yearly Billing <span class="bill-p-span">25% discount</span></p>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  
+    <div class="offer-container">
+      <div class="offer-text">
+        <p class="offers"><img class="offer-icon" src="./images/icon-check.svg">Unlimited websites</p>
+        <p class="offers"><img class="offer-icon" src="./images/icon-check.svg">100% data ownership</p>
+        <p class="offers"><img class="offer-icon" src="./images/icon-check.svg">Email reports</p>
+      </div>
+      <div class="offer-btn-container">
+        <button class="offer-btn">Start my trial</button>
+      </div>
+    </div> 
+
+  </main>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Kenneth Bacaltos</a>.
+  </div>
+</body>
+</html>
